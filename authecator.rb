@@ -6,11 +6,9 @@ def authecate(username,password,list_of_users)
   list_of_users.each do |user|
     if user[:username] === username && user[:password] === password
       return user
-      break
-    else
-      return "Users details are incorrect"
     end
   end
+  return "Invalid password"
 end
 users = [
   {username: "bhanu", password: "bhanu"},
@@ -30,5 +28,6 @@ print "password : "
 password = gets.chomp
 response = authecate(username,password,users)
 p response
+attemp += 1
 end
 
